@@ -1,6 +1,11 @@
-# 🤖 Multimodal LLM: Image-Aware Language Generation
+# 🤖 Qwen-CLIP Multimodal
 
 A lightweight multimodal large language model that combines CLIP vision understanding with Qwen2.5 language generation capabilities for image captioning, visual question answering, and multimodal chat.
+
+[![GitHub](https://img.shields.io/github/license/MaharshPatelX/qwen-clip-multimodal)](https://github.com/MaharshPatelX/qwen-clip-multimodal/blob/main/LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
+[![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-yellow)](https://huggingface.co/)
 
 ## 🏗️ Architecture
 
@@ -15,8 +20,8 @@ A lightweight multimodal large language model that combines CLIP vision understa
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd multimodal_llm
+git clone https://github.com/MaharshPatelX/qwen-clip-multimodal.git
+cd qwen-clip-multimodal
 
 # Create virtual environment (using uv - recommended)
 uv venv
@@ -101,7 +106,7 @@ curl -X POST "http://localhost:8000/caption" \
 ## 📁 Project Structure
 
 ```
-multimodal_llm/
+qwen-clip-multimodal/
 ├── configs/                    # Training configurations
 │   ├── debug.json             # Debug settings
 │   ├── small_scale.json       # Small-scale training
