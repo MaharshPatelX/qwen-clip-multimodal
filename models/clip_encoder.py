@@ -16,8 +16,8 @@ class CLIPVisionEncoder(nn.Module):
         self.model_name = model_name
         self.freeze_encoder = freeze_encoder
         
-        # Load pre-trained CLIP vision model
-        self.vision_model = CLIPVisionModel.from_pretrained(model_name)
+        # Load pre-trained CLIP vision model (force safetensors for security)
+        self.vision_model = CLIPVisionModel.from_pretrained(model_name, use_safetensors=True)
         self.image_processor = CLIPImageProcessor.from_pretrained(model_name)
         
         # Freeze the vision encoder if specified
