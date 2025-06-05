@@ -1,0 +1,28 @@
+[
+  {
+    "image": "test_image_1.jpg",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nWhat is in this image?"
+      },
+      {
+        "from": "assistant",
+        "value": "This is a test image for the multimodal LLM training pipeline."
+      }
+    ]
+  },
+  {
+    "image": "test_image_2.jpg", 
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nDescribe what you see."
+      },
+      {
+        "from": "assistant",
+        "value": "This is another test image used for validating the training setup."
+      }
+    ]
+  }
+]
