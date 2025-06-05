@@ -95,11 +95,15 @@ class MultimodalTrainer:
         self.logger.info("=" * 50)
         self._train_stage1()
         
-        # Stage 2: End-to-end fine-tuning  
-        self.logger.info("=" * 50)
-        self.logger.info("STAGE 2: End-to-End Fine-tuning")
-        self.logger.info("=" * 50)
-        self._train_stage2()
+        # Skip Stage 2 if stage2_epochs is 0
+        if self.config.training.stage2_epochs > 0:
+            # Stage 2: End-to-end fine-tuning  
+            self.logger.info("=" * 50)
+            self.logger.info("STAGE 2: End-to-End Fine-tuning")
+            self.logger.info("=" * 50)
+            self._train_stage2()
+        else:
+            self.logger.info("Stage 2 skipped (stage2_epochs = 0)")
         
         # Final evaluation
         if self.eval_dataset is not None:

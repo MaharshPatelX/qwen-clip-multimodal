@@ -30,12 +30,24 @@ This project helps you create an AI model that can:
 
 ### Step 1: Setup Your Computer
 
+
 ```bash
-# 1. Download this project
+#1. Setup env
+curl -Ls https://astral.sh/uv/install.sh | sh
+
+pip install uv
+
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+#2. Activate env
+source .venv/bin/activate
+
+# 3. Download this project
 git clone https://github.com/MaharshPatelX/qwen-clip-multimodal.git
 cd qwen-clip-multimodal
 
-# 2. Install Python packages (this takes a few minutes)
+# 4. Install Python packages (this takes a few minutes)
 pip install -r requirements.txt
 ```
 
