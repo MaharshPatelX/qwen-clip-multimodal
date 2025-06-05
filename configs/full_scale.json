@@ -25,11 +25,11 @@
     }
   },
   "data": {
-    "train_data_path": "",
-    "val_data_path": "",
+    "train_data_path": "test_data/sample_data.json",
+    "val_data_path": "test_data/sample_data.json",
     "test_data_path": "",
-    "image_dir": "",
-    "dataset_type": "custom",
+    "image_dir": "test_data/images",
+    "dataset_type": "instruction",
     "max_length": 512,
     "image_size": [224, 224],
     "batch_size": 32,
