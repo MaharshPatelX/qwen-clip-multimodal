@@ -44,6 +44,11 @@ def simple_test():
             lora_config=config.model.lora_config
         )
         
+        # Move model to GPU if available
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        model = model.to(device)
+        print(f"✅ Model moved to {device}")
+        
         print("✅ Created model architecture")
         
         # Load checkpoint weights
@@ -65,6 +70,10 @@ def simple_test():
         # Create text input
         prompt = "Describe this image."
         text_inputs = tokenizer(f"<image>\n{prompt}", return_tensors="pt", padding=True)
+        
+        # Move inputs to same device as model
+        image_inputs = {k: v.to(device) for k, v in image_inputs.items()}
+        text_inputs = {k: v.to(device) for k, v in text_inputs.items()}
         
         print(f"📸 Testing with: {image_path}")
         print(f"💭 Prompt: {prompt}")
