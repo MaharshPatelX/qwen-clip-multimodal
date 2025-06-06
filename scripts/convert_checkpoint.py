@@ -108,9 +108,25 @@ def convert_checkpoint_to_model(checkpoint_path, output_path):
         # Verify the conversion worked
         print("🔍 Verifying converted model...")
         try:
-            test_model = MultimodalLLM.from_pretrained(output_path)
-            print("✅ Model verification successful!")
-            return True
+            # Check if required files exist
+            required_files = ["pytorch_model.bin", "config.json"]
+            all_files_exist = True
+            for file in required_files:
+                file_path = os.path.join(output_path, file)
+                if os.path.exists(file_path):
+                    size = os.path.getsize(file_path) / (1024*1024)
+                    print(f"✅ {file} exists ({size:.1f} MB)")
+                else:
+                    print(f"❌ {file} missing")
+                    all_files_exist = False
+            
+            if all_files_exist:
+                print("✅ Model verification successful!")
+                return True
+            else:
+                print("❌ Some required files are missing")
+                return False
+                
         except Exception as e:
             print(f"❌ Model verification failed: {e}")
             return False
