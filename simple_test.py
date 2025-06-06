@@ -33,11 +33,15 @@ def simple_test():
         
         print("✅ Loaded config and processors")
         
-        # Create model
+        # Create model with correct parameters
         model = MultimodalLLM(
-            config=config,
-            tokenizer=tokenizer,
-            image_processor=image_processor
+            clip_model_name=config.model.clip_model_name,
+            qwen_model_name=config.model.qwen_model_name,
+            fusion_type=config.model.fusion_type,
+            fusion_config=config.model.fusion_config,
+            freeze_vision=config.model.freeze_vision,
+            use_lora=config.model.use_lora,
+            lora_config=config.model.lora_config
         )
         
         print("✅ Created model architecture")
