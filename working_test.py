@@ -98,13 +98,10 @@ def working_test():
                         attention_mask=text_inputs["attention_mask"],
                         images=image_inputs["pixel_values"],
                         max_new_tokens=30,
-                        min_length=text_inputs["input_ids"].shape[1] + 5,
                         temperature=0.8,
                         do_sample=True,
                         top_p=0.9,
-                        repetition_penalty=1.1,
-                        eos_token_id=tokenizer.eos_token_id,
-                        pad_token_id=tokenizer.pad_token_id
+                        repetition_penalty=1.1
                     )
                 
                 # Decode only the new tokens
@@ -123,9 +120,7 @@ def working_test():
                         attention_mask=text_inputs["attention_mask"],
                         images=image_inputs["pixel_values"],
                         max_new_tokens=20,
-                        do_sample=False,  # Greedy
-                        eos_token_id=tokenizer.eos_token_id,
-                        pad_token_id=tokenizer.pad_token_id
+                        do_sample=False  # Greedy
                     )
                     
                     new_tokens = outputs[0][input_length:]
