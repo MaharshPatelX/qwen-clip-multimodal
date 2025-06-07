@@ -1,4 +1,5 @@
 # 🤖 Qwen-CLIP Multimodal: Train Your Own Vision AI
+[📖 Read the blog post that inspired this project](https://maharshpatelx.medium.com/building-vision-ai-that-actually-works-my-155-000-step-journey-from-curiosity-to-code-1abee45d9dc4)
 
 **Train a smart AI that can see images and talk about them!**
 
